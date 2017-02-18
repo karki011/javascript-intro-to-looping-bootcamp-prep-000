@@ -1,14 +1,32 @@
-
 function forLoop(array) {
-    //     for(let i = 0; i < 25; i++) {
-    //         if (i === 1) {
-    //             console.log(`I am ${i} strange loop${i === 0 ? '' : 's'}.`);
-    //         }else  {
-    //             console.log(`I am ${i} strange loops.`);
-    //
-    //         }
-    // }
-    for (let i = 0, l = testArray.length; i < l; i++) {
-      let s = i === 1 ? "I am 1 strange loop." : `I am ${i} strange loops.`
+    for (let i = 0; i < 25; i++) {
+        if (i === 1) {
+            array.push("I am 1 strange loop.")
+        } else {
+            array.push(`I am ${i} strange loops.`)
+        }
+    }
+
+    return array
 }
-forLoop();
+
+
+function whileLoop(n) {
+    while (n > 0) {
+        console.log(--n)
+    }
+
+    return 'done'
+}
+
+function doWhileLoop(array) {
+    function maybeTrue() {
+        return Math.random() >= 0.5
+    }
+
+    do {
+        array = array.slice(1)
+    } while (array.length > 0 && maybeTrue())
+
+    return array
+}
